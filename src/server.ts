@@ -1,15 +1,14 @@
-import axios from "axios";
-import express from "express";
-import { API_KEY } from "./common/string";
+import express from 'express';
+import bodyParser from 'body-parser';
 const app = express();
-const port = process.env.PORT || 3001;
-app.get("/test", async (req, res) => {
-
-  const data = await axios.get(
-    "https://api.steampowered.com/IEconDOTA2_570/GetHeroes/v0001/?key=5B94DAD2545FCAA73447EEF18ED8432A"
-  );
-  res.send(data)
-});
+const port = 4000;
+import cors from "cors"
+import match from './routes/match'
+import team from './routes/team'
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(match)
+app.use(team)
 app.listen(port, () => {
-  console.log(`Server started on http://localhost:${port}/`);
+  console.log(`Success! Your application is running on port ${port}.`);
 });
