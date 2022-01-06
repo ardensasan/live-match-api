@@ -66,7 +66,7 @@ route.get("/match/live", async (req: Request, res: Response) => {
       matchList: newList,
     });
   }
-  return res.send("");
+  return res.send("a");
 });
 
 route.get("/match", (req: Request, res: Response) => {});
