@@ -1,4 +1,8 @@
 import axios from "axios";
+
+export const getLiveMatches = () => {
+
+}
 import { API_KEY } from "../common/string";
 export const getTeamLogo = async (gameList: Array<any>) => {
   //   const aw =  gameList.map(async (game) => {
@@ -25,3 +29,13 @@ export const getTeamLogo = async (gameList: Array<any>) => {
 //     posts
 //   );
 };
+
+
+
+export const checkProperty = (property:any) =>{
+  try {
+    return property
+  } catch (error) {
+    return undefined
+  }
+}

@@ -1,12 +1,13 @@
 import express from 'express';
-import bodyParser from 'body-parser';
 const app = express();
 const port = 4000;
 import cors from "cors"
 import match from './routes/match'
 import team from './routes/team'
+import { getLiveMatches } from './pusher/match';
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.json());
+getLiveMatches();
 app.use(match)
 app.use(team)
 app.listen(port, () => {
