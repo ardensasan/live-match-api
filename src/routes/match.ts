@@ -62,11 +62,11 @@ route.get("/match/live", async (req: Request, res: Response) => {
         // dire_score: game.scoreboard.dire.score|| undefined,
       };
     });
-    pusher.trigger("match-channel", "get-live-matches", {
-      matchList: newList,
-    });
+    return res.send(newList);
+  }else{
+    return res.send("a");
   }
-  return res.send("a");
+
 });
 
 route.get("/match", (req: Request, res: Response) => {});
