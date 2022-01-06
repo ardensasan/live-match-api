@@ -18,5 +18,11 @@
       "dest": "src/server.ts",
       "continue": true
     }
-  ]
+  ],
+  "env": {
+    "APP_ID": "@channels-app-id",
+    "KEY": "2199e079bc9ad09b0c70",
+    "SECRET": "@channels-app-secret",
+    "CLUSTER": "ap1"
+  }
 }
